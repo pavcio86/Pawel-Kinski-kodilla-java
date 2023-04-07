@@ -1,10 +1,7 @@
 package com.kodilla.testing.collection;
 import org.junit.jupiter.api.*;
-
-import java.util.ArrayList;
-import java.util.List;
-
-
+import java.util.*;
+import java.lang.*;
 
 public class CollectionTestSuite {
 
@@ -28,39 +25,66 @@ public class CollectionTestSuite {
         System.out.println("Test Suite: end");
     }
 
-    @DisplayName("when list created " +
-                 "then method checks is the list is empty"
+    @DisplayName("when create emptyNumberList and use oddTerminator on it, " +
+            "then oddTerminator should not find any number to exterminate "
     )
     @Test
     void testOddNumbersExterminatorEmptyList(){
 
         //Given
-        List <Integer> numbers = new ArrayList<>();
+        OddNumbersExterminator oddTerminator = new OddNumbersExterminator();
+        ArrayList<Integer> emptyNumberList = new ArrayList<Integer>();
+        ArrayList<Integer> naturalNumberList = new ArrayList<Integer>();
+        naturalNumberList.add(12);
+        naturalNumberList.add(13);
+        naturalNumberList.add(14);
+        naturalNumberList.add(15);
+        naturalNumberList.add(16);
+        naturalNumberList.add(17);
+
+        naturalNumberList.removeAll(naturalNumberList);
+
+        ArrayList<Integer>  expectedResult = naturalNumberList;
+        System.out.println("Testing " + expectedResult);
 
         //When
-        boolean result = numbers.isEmpty();
+        List<Integer> result = oddTerminator.exterminate(emptyNumberList);
+        System.out.println("Testing " + result);
 
         //Then
-        Assertions.assertTrue(result);
-
+        Assertions.assertEquals(expectedResult, result);
     }
 
-    @DisplayName("when list created " +
-                 "then method checks is the list is fill"
+    @DisplayName("when create naturalNumberList with a few numbers and use oddTerminator on it, " +
+            "then oddTerminator should exterminate odd numbers"
     )
     @Test
     void testOddNumbersExterminatorNormalList() {
 
         //Given
-        List <Integer> numbers = new ArrayList<>();
+        OddNumbersExterminator oddTerminator = new OddNumbersExterminator();
+        ArrayList<Integer> naturalNumberList = new ArrayList<Integer>();
+        naturalNumberList.add(12);
+        naturalNumberList.add(13);
+        naturalNumberList.add(14);
+        naturalNumberList.add(15);
+        naturalNumberList.add(16);
+        naturalNumberList.add(17);
 
+        for (int i=0; i<naturalNumberList.size(); i++) {
+            if (naturalNumberList.get(i) % 2 == 1){
+                naturalNumberList.remove(i);
+            }
+        }
 
-        //When
-        boolean result = numbers.isEmpty();
+            ArrayList<Integer> expectedResult = naturalNumberList;
 
-        //Then
-        Assertions.assertFalse(!result);
+            //When
+            List<Integer> result = oddTerminator.exterminate(naturalNumberList);
+            System.out.println("Testing " + result);
 
+            //Then
+            Assertions.assertEquals(expectedResult, result);
+        }
     }
-}
 

@@ -9,14 +9,14 @@ class OddNumbersExterminator {
 
     public List<Integer> exterminate(List<Integer> numbers) {
 
-        ArrayList<Integer> evenNumbers = new ArrayList<>();
+        ArrayList<Integer> evenNumbersList = new ArrayList<>();
 
         for(int number : numbers) {
             if(number % 2 == 0) {
-                evenNumbers.add(number);
+                evenNumbersList.add(number);
             }
         }
-        return evenNumbers;
+        return evenNumbersList;
     }
 }
 
@@ -26,8 +26,6 @@ class Application {
     public static void main (String[] args){
 
         OddNumbersExterminator oddTerminator = new OddNumbersExterminator();
-
-        ArrayList<Integer> emptyNumberList = new ArrayList<Integer>();
 
         ArrayList<Integer> naturalNumberList = new ArrayList<Integer>();
         naturalNumberList.add(12);

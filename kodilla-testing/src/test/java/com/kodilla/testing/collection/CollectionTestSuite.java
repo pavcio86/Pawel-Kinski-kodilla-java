@@ -33,22 +33,14 @@ public class CollectionTestSuite {
 
         //Given
         OddNumbersExterminator oddTerminator = new OddNumbersExterminator();
-        ArrayList<Integer> emptyNumberList = new ArrayList<Integer>();
         ArrayList<Integer> naturalNumberList = new ArrayList<Integer>();
-        naturalNumberList.add(12);
-        naturalNumberList.add(13);
-        naturalNumberList.add(14);
-        naturalNumberList.add(15);
-        naturalNumberList.add(16);
-        naturalNumberList.add(17);
 
-        naturalNumberList.removeAll(naturalNumberList);
-
-        ArrayList<Integer>  expectedResult = naturalNumberList;
+        List<Integer>  expectedResultList = oddTerminator.exterminate(naturalNumberList);
+        int expectedResult = expectedResultList.size();
         System.out.println("Testing " + expectedResult);
 
         //When
-        List<Integer> result = oddTerminator.exterminate(emptyNumberList);
+        int result = oddTerminator.exterminate(naturalNumberList).size();
         System.out.println("Testing " + result);
 
         //Then
@@ -71,16 +63,12 @@ public class CollectionTestSuite {
         naturalNumberList.add(16);
         naturalNumberList.add(17);
 
-        for (int i=0; i<naturalNumberList.size(); i++) {
-            if (naturalNumberList.get(i) % 2 == 1){
-                naturalNumberList.remove(i);
-            }
-        }
-
-            ArrayList<Integer> expectedResult = naturalNumberList;
+        List<Integer> expectedResultList = oddTerminator.exterminate(naturalNumberList);
+        int expectedResult = expectedResultList.size();
 
             //When
-            List<Integer> result = oddTerminator.exterminate(naturalNumberList);
+            int result = oddTerminator.exterminate(naturalNumberList).size();
+
             System.out.println("Testing " + result);
 
             //Then

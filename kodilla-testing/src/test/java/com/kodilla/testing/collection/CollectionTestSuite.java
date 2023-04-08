@@ -35,16 +35,14 @@ public class CollectionTestSuite {
         OddNumbersExterminator oddTerminator = new OddNumbersExterminator();
         ArrayList<Integer> naturalNumberList = new ArrayList<Integer>();
 
-        List<Integer>  expectedResultList = oddTerminator.exterminate(naturalNumberList);
-        int expectedResult = expectedResultList.size();
-        System.out.println("Testing " + expectedResult);
+        System.out.println("Testing " + 0);
 
         //When
         int result = oddTerminator.exterminate(naturalNumberList).size();
         System.out.println("Testing " + result);
 
         //Then
-        Assertions.assertEquals(expectedResult, result);
+        Assertions.assertEquals(0, result);
     }
 
     @DisplayName("when create naturalNumberList with a few numbers and use oddTerminator on it, " +
@@ -63,16 +61,13 @@ public class CollectionTestSuite {
         naturalNumberList.add(16);
         naturalNumberList.add(17);
 
-        List<Integer> expectedResultList = oddTerminator.exterminate(naturalNumberList);
-        int expectedResult = expectedResultList.size();
-
             //When
             int result = oddTerminator.exterminate(naturalNumberList).size();
 
             System.out.println("Testing " + result);
 
             //Then
-            Assertions.assertEquals(expectedResult, result);
+            Assertions.assertEquals( 3 , result);
         }
     }
 

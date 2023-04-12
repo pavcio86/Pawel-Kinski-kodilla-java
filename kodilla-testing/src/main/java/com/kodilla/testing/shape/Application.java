@@ -13,6 +13,7 @@ public class Application {
         shapeColl.showFigures();
         System.out.println();
         System.out.println(shapeColl.getFigure(1));
+        System.out.println(shapeColl.getFigure(0));
         System.out.println();
         shapeColl.removeFigure(triangle);
         shapeColl.showFigures();

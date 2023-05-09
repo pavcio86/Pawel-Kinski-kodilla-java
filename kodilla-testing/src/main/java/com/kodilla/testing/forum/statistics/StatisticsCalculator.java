@@ -45,20 +45,23 @@ class StatisticsCalculator {
 
          commentQuantity = statistics.commentsCount();
 
-         if (usersQuantity == 0)
+         if (usersQuantity == 0){
              averagePostsPerUser = 0;
-         if (usersQuantity > 0)
+         }else{
              averagePostsPerUser = postsQuantity / usersQuantity;
+         }
 
-         if (usersQuantity == 0)
+         if (usersQuantity == 0) {
              averageCommentsPerUser = 0;
-         if (usersQuantity > 0)
+         }else{
              averageCommentsPerUser = commentQuantity / usersQuantity;
+         }
 
-         if (postsQuantity == 0)
+         if (postsQuantity == 0) {
              averageCommentsPerPost = 0;
-         if (postsQuantity > 0)
+         }else{
              averageCommentsPerPost = commentQuantity / postsQuantity;
+         }
     }
 
     public  String showStatistics(){

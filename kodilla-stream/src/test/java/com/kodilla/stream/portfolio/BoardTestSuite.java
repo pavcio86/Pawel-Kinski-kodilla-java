@@ -135,7 +135,7 @@ class BoardTestSuite {
 
         //When
         List<TaskList> inProgressTasks = new ArrayList<>();               // [1]
-        inProgressTasks.add(new TaskList("In progress"));                 // [2]
+        inProgressTasks.add(new TaskList("In progres"));                 // [2]
         long longTasks = project.getTaskLists().stream()                  // [3]
                 .filter(inProgressTasks::contains)                             // [4]
                 .flatMap(tl -> tl.getTasks().stream())                         // [5]
@@ -165,14 +165,13 @@ class BoardTestSuite {
         double sumOfTasks = project.getTaskLists().stream()
                 .filter(inProgressTasks::contains)
                 .flatMap(tl -> tl.getTasks().stream())
-                .mapToDouble(t->1)
                 .count();
 
 
         double averageDaysPerTask = sumOfWorkingDays / sumOfTasks;
 
         //Then
-        Assertions.assertEquals(10.0,averageDaysPerTask);
+        Assertions.assertEquals(10,averageDaysPerTask);
 
     }
 }

@@ -25,7 +25,7 @@ public class FirstChallenge {
         }catch (ArithmeticException e){
             System.out.println(" warning!!!   divider cannot equals " + e.getMessage() + " , enter right divider");
         }finally {
-            System.out.println("time of process finishing : " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("H:m")));
+            System.out.println("time of process finishing :  " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("H:m")));
         }
     }
 }

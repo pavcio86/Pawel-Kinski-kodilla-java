@@ -1,7 +1,6 @@
 package com.kodilla.exception.test;
 
 import java.time.*;
-import java.time.chrono.ChronoLocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class FirstChallenge {
@@ -25,7 +24,7 @@ public class FirstChallenge {
         }catch (ArithmeticException e){
             System.out.println(" warning!!!   divider cannot equals " + e.getMessage() + " , enter right divider");
         }finally {
-            System.out.println("time of process finishing :  " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("H:m")));
+            System.out.println("time of process finishing :  " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm")));
         }
     }
 }

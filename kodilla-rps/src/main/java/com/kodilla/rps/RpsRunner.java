@@ -8,7 +8,6 @@ public class RpsRunner {
 
     public static void main(String[] args) {
         restartOrExit(game());
-
     }
 
     public static boolean restartOrExit(boolean object){
@@ -19,7 +18,7 @@ public class RpsRunner {
             System.out.println("to end press x, to restart press n");
             String choice = scan.nextLine();
             if(choice.equals("x")){
-                    process = false;
+                process = false;
             }
             if(choice.equals("n")){
                 game();

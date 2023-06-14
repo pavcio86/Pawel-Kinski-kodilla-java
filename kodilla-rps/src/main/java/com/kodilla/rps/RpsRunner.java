@@ -18,7 +18,6 @@ public class RpsRunner {
             System.out.println("to end press x, to restart press n");
             String choice = scan.nextLine();
             if(choice.equals("x")){
-                process = false;
             }
             if(choice.equals("n")){
                 game();

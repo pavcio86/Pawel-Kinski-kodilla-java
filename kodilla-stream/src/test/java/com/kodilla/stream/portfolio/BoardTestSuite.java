@@ -135,7 +135,7 @@ class BoardTestSuite {
 
         //When
         List<TaskList> inProgressTasks = new ArrayList<>();               // [1]
-        inProgressTasks.add(new TaskList("In progress"));                 // [2]
+        inProgressTasks.add(new TaskList("In progres"));                 // [2]
         long longTasks = project.getTaskLists().stream()                  // [3]
                 .filter(inProgressTasks::contains)                             // [4]
                 .flatMap(tl -> tl.getTasks().stream())                         // [5]

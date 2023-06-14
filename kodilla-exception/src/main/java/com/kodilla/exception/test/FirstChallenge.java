@@ -17,6 +17,7 @@ public class FirstChallenge {
      * @param args
      */
     public static void main(String[] args) {
+
         try {
             FirstChallenge firstChallenge = new FirstChallenge();
             double result = firstChallenge.divide(3, 0);
